@@ -19,23 +19,37 @@ function setup(){
 background (bg);
 }
 
-function draw(){
-  //runs continuously
-
-text("click locations you have visited", 0, 0, width);
-fill("#db3236	");
-textSize(20);
-textFont("AVENIR");
-textStyle(BOLD);
-textAlign(CENTER, BASELINE);
-image(pins,savedx,savedy ,20,30);
-
-}
-
-
 function mouseClicked(){
   //runs once when mouse is clicked
   savedy=mouseY;
   savedx=mouseX;
   sound.play();
+
+}
+
+function draw(){
+  //runs continuously
+
+text("click locations you have visited", 0, 0, width);
+fill("#db3236");
+textSize(20);
+textFont("AVENIR");
+textStyle(BOLD);
+textAlign(CENTER, BASELINE)
+image(pins,savedx,savedy ,20,30);
+
+}
+
+class Cube {
+constructor(savedx,savedy) {
+  this.x=savedx;
+  this.y=savedy;
+}
+
+display() {
+  push();
+  image(pins,savedx,savedy ,20,30);
+  pop();
+}
+
 }
