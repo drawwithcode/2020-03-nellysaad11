@@ -48,7 +48,7 @@ constructor(savedx,savedy) {
 
 display() {
   push();
-  image(pins,savedx,savedy ,20,30);
+  image(pins,this.x,this.y ,20,30);
   pop();
 }
 
